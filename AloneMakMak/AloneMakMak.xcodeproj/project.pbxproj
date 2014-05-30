@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		432D23BB193907510069AB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BA193907510069AB94 /* Foundation.framework */; };
+		432D23BD193907510069AB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BC193907510069AB94 /* CoreGraphics.framework */; };
+		432D23BF193907510069AB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BE193907510069AB94 /* UIKit.framework */; };
+		432D23C5193907510069AB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 432D23C3193907510069AB94 /* InfoPlist.strings */; };
+		432D23C7193907510069AB94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23C6193907510069AB94 /* main.m */; };
+		432D23CB193907510069AB94 /* AMMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23CA193907510069AB94 /* AMMAppDelegate.m */; };
+		432D23CE193907510069AB94 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432D23CC193907510069AB94 /* Main_iPhone.storyboard */; };
+		432D23D1193907510069AB94 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432D23CF193907510069AB94 /* Main_iPad.storyboard */; };
+		432D23D4193907510069AB94 /* AMMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23D3193907510069AB94 /* AMMViewController.m */; };
+		432D23D6193907510069AB94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 432D23D5193907510069AB94 /* Images.xcassets */; };
+		432D23DD193907510069AB94 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23DC193907510069AB94 /* XCTest.framework */; };
+		432D23DE193907510069AB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BA193907510069AB94 /* Foundation.framework */; };
+		432D23DF193907510069AB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BE193907510069AB94 /* UIKit.framework */; };
+		432D23E7193907510069AB94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 432D23E5193907510069AB94 /* InfoPlist.strings */; };
+		432D23E9193907510069AB94 /* AloneMakMakTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23E8193907510069AB94 /* AloneMakMakTests.m */; };
+		432D240A19390EDC0069AB94 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23F419390EDC0069AB94 /* API.m */; };
+		432D240B19390EDC0069AB94 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23F819390EDC0069AB94 /* AFHTTPRequestOperation.m */; };
+		432D240C19390EDC0069AB94 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23FA19390EDC0069AB94 /* AFHTTPRequestOperationManager.m */; };
+		432D240D19390EDC0069AB94 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23FC19390EDC0069AB94 /* AFHTTPSessionManager.m */; };
+		432D240E19390EDC0069AB94 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D23FF19390EDC0069AB94 /* AFNetworkReachabilityManager.m */; };
+		432D240F19390EDC0069AB94 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D240119390EDC0069AB94 /* AFSecurityPolicy.m */; };
+		432D241019390EDC0069AB94 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D240319390EDC0069AB94 /* AFURLConnectionOperation.m */; };
+		432D241119390EDC0069AB94 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D240519390EDC0069AB94 /* AFURLRequestSerialization.m */; };
+		432D241219390EDC0069AB94 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D240719390EDC0069AB94 /* AFURLResponseSerialization.m */; };
+		432D241319390EDC0069AB94 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D240919390EDC0069AB94 /* AFURLSessionManager.m */; };
+		432D2417193910970069AB94 /* ViewListImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D2416193910970069AB94 /* ViewListImage.m */; };
+		432D241B193914C80069AB94 /* UIImagePickerCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D241A193914C80069AB94 /* UIImagePickerCustom.m */; };
+		432D241E19391C2D0069AB94 /* frame_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 432D241D19391C2D0069AB94 /* frame_test.png */; };
+		432D242019391FBD0069AB94 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D241F19391FBD0069AB94 /* CoreMotion.framework */; };
+		432D2424193921F10069AB94 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D2423193921F10069AB94 /* ViewUtil.m */; };
+		432D242819392AC00069AB94 /* ViewOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D242719392AC00069AB94 /* ViewOutput.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		432D23E0193907510069AB94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 432D23AF193907510069AB94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 432D23B6193907510069AB94;
+			remoteInfo = AloneMakMak;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		432D23B7193907510069AB94 /* AloneMakMak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AloneMakMak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		432D23BA193907510069AB94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		432D23BC193907510069AB94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		432D23BE193907510069AB94 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		432D23C2193907510069AB94 /* AloneMakMak-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AloneMakMak-Info.plist"; sourceTree = "<group>"; };
+		432D23C4193907510069AB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		432D23C6193907510069AB94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		432D23C8193907510069AB94 /* AloneMakMak-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AloneMakMak-Prefix.pch"; sourceTree = "<group>"; };
+		432D23C9193907510069AB94 /* AMMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMMAppDelegate.h; sourceTree = "<group>"; };
+		432D23CA193907510069AB94 /* AMMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMMAppDelegate.m; sourceTree = "<group>"; };
+		432D23CD193907510069AB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		432D23D0193907510069AB94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		432D23D2193907510069AB94 /* AMMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMMViewController.h; sourceTree = "<group>"; };
+		432D23D3193907510069AB94 /* AMMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMMViewController.m; sourceTree = "<group>"; };
+		432D23D5193907510069AB94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		432D23DB193907510069AB94 /* AloneMakMakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AloneMakMakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		432D23DC193907510069AB94 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		432D23E4193907510069AB94 /* AloneMakMakTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AloneMakMakTests-Info.plist"; sourceTree = "<group>"; };
+		432D23E6193907510069AB94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		432D23E8193907510069AB94 /* AloneMakMakTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AloneMakMakTests.m; sourceTree = "<group>"; };
+		432D23F319390EDC0069AB94 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		432D23F419390EDC0069AB94 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
+		432D23F719390EDC0069AB94 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		432D23F819390EDC0069AB94 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		432D23F919390EDC0069AB94 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		432D23FA19390EDC0069AB94 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		432D23FB19390EDC0069AB94 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		432D23FC19390EDC0069AB94 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		432D23FD19390EDC0069AB94 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		432D23FE19390EDC0069AB94 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		432D23FF19390EDC0069AB94 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		432D240019390EDC0069AB94 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		432D240119390EDC0069AB94 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		432D240219390EDC0069AB94 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		432D240319390EDC0069AB94 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		432D240419390EDC0069AB94 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		432D240519390EDC0069AB94 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		432D240619390EDC0069AB94 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		432D240719390EDC0069AB94 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		432D240819390EDC0069AB94 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		432D240919390EDC0069AB94 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		432D2415193910970069AB94 /* ViewListImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewListImage.h; sourceTree = "<group>"; };
+		432D2416193910970069AB94 /* ViewListImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewListImage.m; sourceTree = "<group>"; };
+		432D2419193914C80069AB94 /* UIImagePickerCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImagePickerCustom.h; sourceTree = "<group>"; };
+		432D241A193914C80069AB94 /* UIImagePickerCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagePickerCustom.m; sourceTree = "<group>"; };
+		432D241D19391C2D0069AB94 /* frame_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame_test.png; sourceTree = "<group>"; };
+		432D241F19391FBD0069AB94 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		432D2422193921F10069AB94 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtil.h; sourceTree = "<group>"; };
+		432D2423193921F10069AB94 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
+		432D242619392AC00069AB94 /* ViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewOutput.h; sourceTree = "<group>"; };
+		432D242719392AC00069AB94 /* ViewOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewOutput.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		432D23B4193907510069AB94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432D242019391FBD0069AB94 /* CoreMotion.framework in Frameworks */,
+				432D23BD193907510069AB94 /* CoreGraphics.framework in Frameworks */,
+				432D23BF193907510069AB94 /* UIKit.framework in Frameworks */,
+				432D23BB193907510069AB94 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		432D23D8193907510069AB94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432D23DD193907510069AB94 /* XCTest.framework in Frameworks */,
+				432D23DF193907510069AB94 /* UIKit.framework in Frameworks */,
+				432D23DE193907510069AB94 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		432D23AE193907510069AB94 = {
+			isa = PBXGroup;
+			children = (
+				432D23C0193907510069AB94 /* AloneMakMak */,
+				432D23E2193907510069AB94 /* AloneMakMakTests */,
+				432D23B9193907510069AB94 /* Frameworks */,
+				432D23B8193907510069AB94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		432D23B8193907510069AB94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				432D23B7193907510069AB94 /* AloneMakMak.app */,
+				432D23DB193907510069AB94 /* AloneMakMakTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		432D23B9193907510069AB94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				432D241F19391FBD0069AB94 /* CoreMotion.framework */,
+				432D23BA193907510069AB94 /* Foundation.framework */,
+				432D23BC193907510069AB94 /* CoreGraphics.framework */,
+				432D23BE193907510069AB94 /* UIKit.framework */,
+				432D23DC193907510069AB94 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		432D23C0193907510069AB94 /* AloneMakMak */ = {
+			isa = PBXGroup;
+			children = (
+				432D23F219390EDC0069AB94 /* API */,
+				432D241C19391C2D0069AB94 /* Images */,
+				432D23F519390EDC0069AB94 /* Libs */,
+				432D23CF193907510069AB94 /* Main_iPad.storyboard */,
+				432D23CC193907510069AB94 /* Main_iPhone.storyboard */,
+				432D23C9193907510069AB94 /* AMMAppDelegate.h */,
+				432D23CA193907510069AB94 /* AMMAppDelegate.m */,
+				432D23D2193907510069AB94 /* AMMViewController.h */,
+				432D23D3193907510069AB94 /* AMMViewController.m */,
+				432D242519392AAE0069AB94 /* ViewOutput */,
+				432D2418193914B70069AB94 /* UIImagePickerCustom */,
+				432D2414193910860069AB94 /* ViewListImage */,
+				432D23D5193907510069AB94 /* Images.xcassets */,
+				432D23C1193907510069AB94 /* Supporting Files */,
+			);
+			path = AloneMakMak;
+			sourceTree = "<group>";
+		};
+		432D23C1193907510069AB94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				432D23C2193907510069AB94 /* AloneMakMak-Info.plist */,
+				432D23C3193907510069AB94 /* InfoPlist.strings */,
+				432D23C6193907510069AB94 /* main.m */,
+				432D23C8193907510069AB94 /* AloneMakMak-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		432D23E2193907510069AB94 /* AloneMakMakTests */ = {
+			isa = PBXGroup;
+			children = (
+				432D23E8193907510069AB94 /* AloneMakMakTests.m */,
+				432D23E3193907510069AB94 /* Supporting Files */,
+			);
+			path = AloneMakMakTests;
+			sourceTree = "<group>";
+		};
+		432D23E3193907510069AB94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				432D23E4193907510069AB94 /* AloneMakMakTests-Info.plist */,
+				432D23E5193907510069AB94 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		432D23F219390EDC0069AB94 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				432D23F319390EDC0069AB94 /* API.h */,
+				432D23F419390EDC0069AB94 /* API.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		432D23F519390EDC0069AB94 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				432D2421193921F10069AB94 /* ViewUtil */,
+				432D23F619390EDC0069AB94 /* AFNetworking */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		432D23F619390EDC0069AB94 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				432D23F719390EDC0069AB94 /* AFHTTPRequestOperation.h */,
+				432D23F819390EDC0069AB94 /* AFHTTPRequestOperation.m */,
+				432D23F919390EDC0069AB94 /* AFHTTPRequestOperationManager.h */,
+				432D23FA19390EDC0069AB94 /* AFHTTPRequestOperationManager.m */,
+				432D23FB19390EDC0069AB94 /* AFHTTPSessionManager.h */,
+				432D23FC19390EDC0069AB94 /* AFHTTPSessionManager.m */,
+				432D23FD19390EDC0069AB94 /* AFNetworking.h */,
+				432D23FE19390EDC0069AB94 /* AFNetworkReachabilityManager.h */,
+				432D23FF19390EDC0069AB94 /* AFNetworkReachabilityManager.m */,
+				432D240019390EDC0069AB94 /* AFSecurityPolicy.h */,
+				432D240119390EDC0069AB94 /* AFSecurityPolicy.m */,
+				432D240219390EDC0069AB94 /* AFURLConnectionOperation.h */,
+				432D240319390EDC0069AB94 /* AFURLConnectionOperation.m */,
+				432D240419390EDC0069AB94 /* AFURLRequestSerialization.h */,
+				432D240519390EDC0069AB94 /* AFURLRequestSerialization.m */,
+				432D240619390EDC0069AB94 /* AFURLResponseSerialization.h */,
+				432D240719390EDC0069AB94 /* AFURLResponseSerialization.m */,
+				432D240819390EDC0069AB94 /* AFURLSessionManager.h */,
+				432D240919390EDC0069AB94 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		432D2414193910860069AB94 /* ViewListImage */ = {
+			isa = PBXGroup;
+			children = (
+				432D2415193910970069AB94 /* ViewListImage.h */,
+				432D2416193910970069AB94 /* ViewListImage.m */,
+			);
+			path = ViewListImage;
+			sourceTree = "<group>";
+		};
+		432D2418193914B70069AB94 /* UIImagePickerCustom */ = {
+			isa = PBXGroup;
+			children = (
+				432D2419193914C80069AB94 /* UIImagePickerCustom.h */,
+				432D241A193914C80069AB94 /* UIImagePickerCustom.m */,
+			);
+			path = UIImagePickerCustom;
+			sourceTree = "<group>";
+		};
+		432D241C19391C2D0069AB94 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				432D241D19391C2D0069AB94 /* frame_test.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		432D2421193921F10069AB94 /* ViewUtil */ = {
+			isa = PBXGroup;
+			children = (
+				432D2422193921F10069AB94 /* ViewUtil.h */,
+				432D2423193921F10069AB94 /* ViewUtil.m */,
+			);
+			path = ViewUtil;
+			sourceTree = "<group>";
+		};
+		432D242519392AAE0069AB94 /* ViewOutput */ = {
+			isa = PBXGroup;
+			children = (
+				432D242619392AC00069AB94 /* ViewOutput.h */,
+				432D242719392AC00069AB94 /* ViewOutput.m */,
+			);
+			path = ViewOutput;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		432D23B6193907510069AB94 /* AloneMakMak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 432D23EC193907510069AB94 /* Build configuration list for PBXNativeTarget "AloneMakMak" */;
+			buildPhases = (
+				432D23B3193907510069AB94 /* Sources */,
+				432D23B4193907510069AB94 /* Frameworks */,
+				432D23B5193907510069AB94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AloneMakMak;
+			productName = AloneMakMak;
+			productReference = 432D23B7193907510069AB94 /* AloneMakMak.app */;
+			productType = "com.apple.product-type.application";
+		};
+		432D23DA193907510069AB94 /* AloneMakMakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 432D23EF193907510069AB94 /* Build configuration list for PBXNativeTarget "AloneMakMakTests" */;
+			buildPhases = (
+				432D23D7193907510069AB94 /* Sources */,
+				432D23D8193907510069AB94 /* Frameworks */,
+				432D23D9193907510069AB94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				432D23E1193907510069AB94 /* PBXTargetDependency */,
+			);
+			name = AloneMakMakTests;
+			productName = AloneMakMakTests;
+			productReference = 432D23DB193907510069AB94 /* AloneMakMakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		432D23AF193907510069AB94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AMM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = hlpth;
+				TargetAttributes = {
+					432D23DA193907510069AB94 = {
+						TestTargetID = 432D23B6193907510069AB94;
+					};
+				};
+			};
+			buildConfigurationList = 432D23B2193907510069AB94 /* Build configuration list for PBXProject "AloneMakMak" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 432D23AE193907510069AB94;
+			productRefGroup = 432D23B8193907510069AB94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				432D23B6193907510069AB94 /* AloneMakMak */,
+				432D23DA193907510069AB94 /* AloneMakMakTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		432D23B5193907510069AB94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432D241E19391C2D0069AB94 /* frame_test.png in Resources */,
+				432D23D1193907510069AB94 /* Main_iPad.storyboard in Resources */,
+				432D23D6193907510069AB94 /* Images.xcassets in Resources */,
+				432D23CE193907510069AB94 /* Main_iPhone.storyboard in Resources */,
+				432D23C5193907510069AB94 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		432D23D9193907510069AB94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432D23E7193907510069AB94 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		432D23B3193907510069AB94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432D23D4193907510069AB94 /* AMMViewController.m in Sources */,
+				432D240F19390EDC0069AB94 /* AFSecurityPolicy.m in Sources */,
+				432D23CB193907510069AB94 /* AMMAppDelegate.m in Sources */,
+				432D242819392AC00069AB94 /* ViewOutput.m in Sources */,
+				432D240C19390EDC0069AB94 /* AFHTTPRequestOperationManager.m in Sources */,
+				432D241019390EDC0069AB94 /* AFURLConnectionOperation.m in Sources */,
+				432D240B19390EDC0069AB94 /* AFHTTPRequestOperation.m in Sources */,
+				432D240A19390EDC0069AB94 /* API.m in Sources */,
+				432D241119390EDC0069AB94 /* AFURLRequestSerialization.m in Sources */,
+				432D240D19390EDC0069AB94 /* AFHTTPSessionManager.m in Sources */,
+				432D240E19390EDC0069AB94 /* AFNetworkReachabilityManager.m in Sources */,
+				432D2417193910970069AB94 /* ViewListImage.m in Sources */,
+				432D241B193914C80069AB94 /* UIImagePickerCustom.m in Sources */,
+				432D241219390EDC0069AB94 /* AFURLResponseSerialization.m in Sources */,
+				432D241319390EDC0069AB94 /* AFURLSessionManager.m in Sources */,
+				432D2424193921F10069AB94 /* ViewUtil.m in Sources */,
+				432D23C7193907510069AB94 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		432D23D7193907510069AB94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				432D23E9193907510069AB94 /* AloneMakMakTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		432D23E1193907510069AB94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 432D23B6193907510069AB94 /* AloneMakMak */;
+			targetProxy = 432D23E0193907510069AB94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		432D23C3193907510069AB94 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				432D23C4193907510069AB94 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		432D23CC193907510069AB94 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				432D23CD193907510069AB94 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		432D23CF193907510069AB94 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				432D23D0193907510069AB94 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		432D23E5193907510069AB94 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				432D23E6193907510069AB94 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		432D23EA193907510069AB94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		432D23EB193907510069AB94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		432D23ED193907510069AB94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AloneMakMak/AloneMakMak-Prefix.pch";
+				INFOPLIST_FILE = "AloneMakMak/AloneMakMak-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		432D23EE193907510069AB94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AloneMakMak/AloneMakMak-Prefix.pch";
+				INFOPLIST_FILE = "AloneMakMak/AloneMakMak-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		432D23F0193907510069AB94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AloneMakMak.app/AloneMakMak";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AloneMakMak/AloneMakMak-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AloneMakMakTests/AloneMakMakTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		432D23F1193907510069AB94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AloneMakMak.app/AloneMakMak";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AloneMakMak/AloneMakMak-Prefix.pch";
+				INFOPLIST_FILE = "AloneMakMakTests/AloneMakMakTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		432D23B2193907510069AB94 /* Build configuration list for PBXProject "AloneMakMak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				432D23EA193907510069AB94 /* Debug */,
+				432D23EB193907510069AB94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		432D23EC193907510069AB94 /* Build configuration list for PBXNativeTarget "AloneMakMak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				432D23ED193907510069AB94 /* Debug */,
+				432D23EE193907510069AB94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		432D23EF193907510069AB94 /* Build configuration list for PBXNativeTarget "AloneMakMakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				432D23F0193907510069AB94 /* Debug */,
+				432D23F1193907510069AB94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 432D23AF193907510069AB94 /* Project object */;
+}
