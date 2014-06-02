@@ -16,7 +16,6 @@
 
 - (IBAction)clickBack:(id)sender;
 - (IBAction)clickSave:(id)sender;
-- (IBAction)clickShare:(id)sender;
-- (IBAction)clickEmail:(id)sender;
+
 
 @end

@@ -10,4 +10,9 @@
 
 @interface AMMViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property (nonatomic, weak) IBOutlet UIImageView *mImageHead;
+
+- (IBAction)clickTakePhoto:(id)sender;
+- (IBAction)clickLibrary:(id)sender;
+
 @end

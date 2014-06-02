@@ -38,18 +38,56 @@
     return UIInterfaceOrientationMaskLandscape;
 }
 
+- (void)clickCapture {
+    [mMotionManager stopGyroUpdates];
+    self.mIsInPreviewMode = YES;
+    [self takePicture];
+}
+
+- (void)clickFlip {
+    if(self.cameraDevice == UIImagePickerControllerCameraDeviceFront)
+        [self setCameraDevice:UIImagePickerControllerCameraDeviceRear];
+    else
+        [self setCameraDevice:UIImagePickerControllerCameraDeviceFront];
+}
+
+- (void)clickBack {
+    [mMotionManager stopGyroUpdates];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     API *a = [API getAPI];
-    a.mViewFrame = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
+    a.mViewFrame = [[UIView alloc] initWithFrame:CGRectMake(600, 0, 768, 1024)];
     
-    UIImageView *f = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame_test.png"]];
+    UIImageView *f = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame.png"]];
+    [f setFrame:CGRectMake(-2728/2, 0, 2728, 768)];
     [a.mViewFrame addSubview:f];
     [self.view addSubview:a.mViewFrame];
     [a.mViewFrame setUserInteractionEnabled:NO];
+    
+    
+    UIButton *buttonCapture = [[UIButton alloc] initWithFrame:CGRectMake(910, 660, 105, 112)];
+    [buttonCapture setAlpha:0.8];
+    [buttonCapture addTarget:self action:@selector(clickCapture) forControlEvents:UIControlEventTouchUpInside];
+    [buttonCapture setImage:[UIImage imageNamed:@"intro-btnGallery.png"] forState:UIControlStateNormal];
+    [self.view addSubview:buttonCapture];
+    
+    UIButton *buttonFlip = [[UIButton alloc] initWithFrame:CGRectMake(120, 660, 105, 112)];
+    [buttonFlip setAlpha:0.8];
+    [buttonFlip addTarget:self action:@selector(clickFlip) forControlEvents:UIControlEventTouchUpInside];
+    [buttonFlip setImage:[UIImage imageNamed:@"intro-btnGallery.png"] forState:UIControlStateNormal];
+    [self.view addSubview:buttonFlip];
+
+    UIButton *buttonBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 660, 105, 112)];
+    [buttonBack setAlpha:0.8];
+    [buttonBack addTarget:self action:@selector(clickBack) forControlEvents:UIControlEventTouchUpInside];
+    [buttonBack setImage:[UIImage imageNamed:@"share-btnBack.png"] forState:UIControlStateNormal];
+    [self.view addSubview:buttonBack];
+
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -65,7 +103,17 @@
                                                  name:@"_UIImagePickerControllerUserDidRejectItem"
                                                object:nil];
 
-    
+//    for(UIView *v in self.view.subviews){
+//        BOOL setHidden = YES;
+//        if(setHidden){
+//            setHidden = NO;
+//            for(UIView *v2 in v.subviews){
+//                NSLog(@"v2 %@", v2);
+//                if(v2.frame.size.height == 768)
+//                    [v sendSubviewToBack:v2];
+//            }
+//        }
+//    }
     
     
     self.mMotionManager = [[CMMotionManager alloc] init];
@@ -83,10 +131,10 @@
                                            
                                            float x = a.mViewFrame.frame.origin.x+rotate.x*factor;
                                            
-                                           if(x > 300)
-                                               x = 300;
-                                           if(x < -300)
-                                               x = -300;
+                                           if(x > 2728/2)
+                                               x = 2728/2;
+                                           if(x < -2728/2+1024)
+                                               x = -2728/2+1024;
                                            [ViewUtil setFrame:a.mViewFrame x:x];
                                        }
                                    }];

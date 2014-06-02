@@ -16,7 +16,7 @@ typedef void (^APICallback)();
 typedef void (^APISuccess)(id);
 typedef void (^APIFail)(NSError*);
 
-@class WCViewController;
+@class AMMViewController;
 
 @interface API : NSObject
 
@@ -24,7 +24,7 @@ typedef void (^APIFail)(NSError*);
 
 @property (nonatomic, strong) NSMutableDictionary *mClientInfoDict;
 @property (nonatomic, strong) NSMutableDictionary *mDataDict;
-@property (nonatomic, assign) WCViewController *mVC;
+@property (nonatomic, assign) AMMViewController *mVC;
 @property (nonatomic, strong) NSString *mDeviceToken;
 @property (nonatomic, strong) UIImage *mImageCurrent;
 @property (nonatomic, strong) UIView *mViewFrame;

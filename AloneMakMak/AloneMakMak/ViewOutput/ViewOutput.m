@@ -8,6 +8,7 @@
 
 #import "ViewOutput.h"
 #import "API.h"
+#import "AMMViewController.h"
 
 @implementation ViewOutput
 
@@ -71,7 +72,8 @@
 
 - (UIImage*)saveImage {
     UIImage* image;
-    UIGraphicsBeginImageContext(mViewContent.frame.size);
+    //UIGraphicsBeginImageContext(mViewContent.frame.size);
+    UIGraphicsBeginImageContextWithOptions(mViewContent.bounds.size, self.view.opaque, 0.0);
     [mViewContent.layer renderInContext:UIGraphicsGetCurrentContext()];
     image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -81,58 +83,22 @@
 }
 
 - (IBAction)clickBack:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        API *a = [API getAPI];
+        [a.mVC clickTakePhoto:nil];
+    }];
 }
 
 - (IBAction)clickSave:(id)sender {
-    [self saveImage];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-//- (void)documentInteractionController:(UIDocumentInteractionController *)controller willBeginSendingToApplication:(NSString *)application {
-////    if ([self isWhatsApplication:application]) {
-////        NSString *savePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/tmptmpimg.wai"];
-////        [UIImageJPEGRepresentation(_img, 1.0) writeToFile:savePath atomically:YES];
-////        controller.URL = [NSURL fileURLWithPath:savePath];
-////        controller.UTI = @"net.whatsapp.image";
-////    }
-//}
-//
-//- (void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application {
-//    
-//}
-
-- (IBAction)clickShare:(id)sender {
-//    UIImage *image = [self saveImage];
-//    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/tmp_img.jpg"];
-//    [UIImageJPEGRepresentation(image, 1.0) writeToFile:path atomically:YES];
-//    
-//    self.mDoc = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:path]];
-//    mDoc.delegate = self;
-//    [mDoc presentOptionsMenuFromRect:CGRectZero inView:self.view animated:YES];
-
-    UIImage *image = [self saveImage];
-    
-    NSArray* dataToShare = @[image];  // ...or whatever pieces of data you want to share.
-    
-    UIActivityViewController* activityViewController =
-    [[UIActivityViewController alloc] initWithActivityItems:dataToShare
-                                      applicationActivities:nil];
-    [self presentViewController:activityViewController animated:YES completion:^{
-        
+    API *a = [API getAPI];
+    a.mImageCurrent = [self saveImage];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [a.mVC performSegueWithIdentifier:@"GotoViewShare" sender:nil];
     }];
-    
-//    NSArray *activityItems = @[image];
-//    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-//    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypePostToTwitter, UIActivityTypePostToWeibo];
-//    [self presentViewController:activityVC animated:TRUE completion:nil];
-    
 }
 
-- (IBAction)clickEmail:(id)sender {
-    
-}
+
+
 
 
 @end

@@ -1,0 +1,84 @@
+//
+//  ViewSendEmail.m
+//  AloneMakMak
+//
+//  Created by saranpol on 6/3/2557 BE.
+//  Copyright (c) 2557 hlpth. All rights reserved.
+//
+
+#import "ViewSendEmail.h"
+
+
+@implementation ViewSendEmail
+
+@synthesize mTextField;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [mTextField becomeFirstResponder];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)clickBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)clickSend:(id)sender {
+    NSLog(@"Send");
+    [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self clickSend:nil];
+    [textField resignFirstResponder];
+    return YES;
+}
+
+@end
