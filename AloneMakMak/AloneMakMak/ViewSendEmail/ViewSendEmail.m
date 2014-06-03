@@ -7,11 +7,12 @@
 //
 
 #import "ViewSendEmail.h"
-
+#import "API.h"
 
 @implementation ViewSendEmail
 
 @synthesize mTextField;
+@synthesize mViewIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +43,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [mViewIndicator setHidden:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -72,7 +74,25 @@
 
 - (IBAction)clickSend:(id)sender {
     NSLog(@"Send");
-    [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
+    if(![mViewIndicator isHidden])
+        return;
+    [mViewIndicator setHidden:NO];
+    if(!mTextField.text)
+        mTextField.text = @"";
+    API *a = [API getAPI];
+    [a api_upload:a.mImageCurrent
+            email:mTextField.text
+          success:^(id JSON){
+//              NSDictionary *json = (NSDictionary*)JSON;
+//              NSLog(@"%@", json);
+// Server damn pass all
+              [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
+              [mViewIndicator setHidden:YES];
+          }failure:^(NSError *failure){
+//              NSLog(@"errorxxx %@", failure);
+              [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
+              [mViewIndicator setHidden:YES];
+          }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

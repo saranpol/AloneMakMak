@@ -11,6 +11,7 @@
 @interface ViewSendEmail : UIViewController
 
 @property (nonatomic, weak) IBOutlet UITextField *mTextField;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *mViewIndicator;
 
 - (IBAction)clickBack:(id)sender;
 - (IBAction)clickSend:(id)sender;

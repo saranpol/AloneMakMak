@@ -10,6 +10,8 @@
 
 @implementation ViewListImage
 
+@synthesize mWebView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,6 +25,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [mWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://labs.bkklive.com/demo/movie/"]]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -173,10 +173,27 @@ NSString *M_TABLE = @"M_TABLE_1";
 
 
 
-- (void)api_get_table:(APISuccess)success
-              failure:(APIFail)failure {
+- (void)api_upload:(UIImage*)image
+             email:(NSString*)email
+           success:(APISuccess)success
+           failure:(APIFail)failure {
     NSMutableDictionary *params = [self initialParam];
-    [self api_call:@"get_table" https:NO params:params success:success failure:failure];
+    [params setObject:email forKey:@"email"];
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+
+    NSString *postPath = [API_PREFIX stringByAppendingString:@"upload"];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *postURL = API_HTTP;
+    postURL = [postURL stringByAppendingString:postPath];
+    
+    [manager POST:postURL
+       parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+           [formData appendPartWithFileData:imageData name:@"image" fileName:@"image.jpg" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
 }
 
 

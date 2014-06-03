@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
 
 #define API_VERSION @"1.0"
-#define API_HTTP @"http://world-cup-brazil.appspot.com/"
-#define API_HTTPS @"https://world-cup-brazil.appspot.com/"
+#define API_HTTP @"http://labs.bkklive.com/demo/movie/api/"
+#define API_HTTPS @"https://labs.bkklive.com/demo/movie/api/"
 #define API_PREFIX @""
+
+
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
@@ -44,9 +46,10 @@ typedef void (^APIFail)(NSError*);
 // API
 - (void)api_cancel_all_call;
 
-- (void)api_get_table:(APISuccess)success
-              failure:(APIFail)failure;
-
+- (void)api_upload:(UIImage*)image
+             email:(NSString*)email
+           success:(APISuccess)success
+           failure:(APIFail)failure;
 
 - (void)gotoEndOfLine;
 

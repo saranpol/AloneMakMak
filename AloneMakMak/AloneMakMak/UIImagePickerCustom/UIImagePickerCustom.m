@@ -15,6 +15,7 @@
 @synthesize mMotionManager;
 @synthesize mQueue;
 @synthesize mIsInPreviewMode;
+@synthesize mGesture;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,6 +57,27 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+- (void)panFrame:(UIPanGestureRecognizer*)g {
+    CGPoint p = [g locationInView:self.view];
+    API *a = [API getAPI];
+
+    float dx = 0;
+    static float oldx = 0;
+    if(g.state == UIGestureRecognizerStateBegan){
+        oldx = p.x;
+    }
+    dx = p.x - oldx;
+    oldx = p.x;
+
+    float x = a.mViewFrame.frame.origin.x+dx;
+    if(x > 2728/2)
+        x = 2728/2;
+    if(x < -2728/2+1024)
+        x = -2728/2+1024;
+    [ViewUtil setFrame:a.mViewFrame x:x];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -69,17 +91,21 @@
     [self.view addSubview:a.mViewFrame];
     [a.mViewFrame setUserInteractionEnabled:NO];
     
+    // Pan
+    self.mGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panFrame:)];
+    [self.view  addGestureRecognizer:mGesture];
+    
     
     UIButton *buttonCapture = [[UIButton alloc] initWithFrame:CGRectMake(910, 660, 105, 112)];
     [buttonCapture setAlpha:0.8];
     [buttonCapture addTarget:self action:@selector(clickCapture) forControlEvents:UIControlEventTouchUpInside];
-    [buttonCapture setImage:[UIImage imageNamed:@"intro-btnGallery.png"] forState:UIControlStateNormal];
+    [buttonCapture setImage:[UIImage imageNamed:@"intro-btnTakePhoto.png"] forState:UIControlStateNormal];
     [self.view addSubview:buttonCapture];
     
     UIButton *buttonFlip = [[UIButton alloc] initWithFrame:CGRectMake(120, 660, 105, 112)];
     [buttonFlip setAlpha:0.8];
     [buttonFlip addTarget:self action:@selector(clickFlip) forControlEvents:UIControlEventTouchUpInside];
-    [buttonFlip setImage:[UIImage imageNamed:@"intro-btnGallery.png"] forState:UIControlStateNormal];
+    [buttonFlip setImage:[UIImage imageNamed:@"intro-btnChangeCam.png"] forState:UIControlStateNormal];
     [self.view addSubview:buttonFlip];
 
     UIButton *buttonBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 660, 105, 112)];
