@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *mImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *mImageHead;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *mViewIndicator;
 
 - (IBAction)clickShare:(id)sender;
 - (IBAction)clickEmail:(id)sender;

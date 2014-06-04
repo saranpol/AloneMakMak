@@ -37,6 +37,7 @@
 		432D242019391FBD0069AB94 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D241F19391FBD0069AB94 /* CoreMotion.framework */; };
 		432D2424193921F10069AB94 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D2423193921F10069AB94 /* ViewUtil.m */; };
 		432D242819392AC00069AB94 /* ViewOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D242719392AC00069AB94 /* ViewOutput.m */; };
+		434E205C193F8F8D00A95BF7 /* ViewFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 434E205B193F8F8D00A95BF7 /* ViewFacebook.m */; };
 		43DC07FD193E3CA600C15C9E /* enteremail-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DC07DB193E3CA600C15C9E /* enteremail-bg.png */; };
 		43DC07FE193E3CA600C15C9E /* enteremail-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DC07DC193E3CA600C15C9E /* enteremail-bg@2x.png */; };
 		43DC07FF193E3CA600C15C9E /* enteremail-FormEmail.png in Resources */ = {isa = PBXBuildFile; fileRef = 43DC07DD193E3CA600C15C9E /* enteremail-FormEmail.png */; };
@@ -141,6 +142,8 @@
 		432D2423193921F10069AB94 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 		432D242619392AC00069AB94 /* ViewOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewOutput.h; sourceTree = "<group>"; };
 		432D242719392AC00069AB94 /* ViewOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewOutput.m; sourceTree = "<group>"; };
+		434E205A193F8F8D00A95BF7 /* ViewFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFacebook.h; sourceTree = "<group>"; };
+		434E205B193F8F8D00A95BF7 /* ViewFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFacebook.m; sourceTree = "<group>"; };
 		43DC07DB193E3CA600C15C9E /* enteremail-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enteremail-bg.png"; sourceTree = "<group>"; };
 		43DC07DC193E3CA600C15C9E /* enteremail-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enteremail-bg@2x.png"; sourceTree = "<group>"; };
 		43DC07DD193E3CA600C15C9E /* enteremail-FormEmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enteremail-FormEmail.png"; sourceTree = "<group>"; };
@@ -256,6 +259,7 @@
 				432D23CA193907510069AB94 /* AMMAppDelegate.m */,
 				432D23D2193907510069AB94 /* AMMViewController.h */,
 				432D23D3193907510069AB94 /* AMMViewController.m */,
+				434E2059193F8F8000A95BF7 /* ViewFacebook */,
 				43F07FE3193D3AFA00C5E49E /* ViewThank */,
 				43F07FDF193D386B00C5E49E /* ViewSendEmail */,
 				432D242519392AAE0069AB94 /* ViewOutput */,
@@ -375,6 +379,15 @@
 				432D242719392AC00069AB94 /* ViewOutput.m */,
 			);
 			path = ViewOutput;
+			sourceTree = "<group>";
+		};
+		434E2059193F8F8000A95BF7 /* ViewFacebook */ = {
+			isa = PBXGroup;
+			children = (
+				434E205A193F8F8D00A95BF7 /* ViewFacebook.h */,
+				434E205B193F8F8D00A95BF7 /* ViewFacebook.m */,
+			);
+			path = ViewFacebook;
 			sourceTree = "<group>";
 		};
 		43DC07DA193E3CA600C15C9E /* Images */ = {
@@ -596,6 +609,7 @@
 				43F07FA9193D273300C5E49E /* ViewShare.m in Sources */,
 				432D23D4193907510069AB94 /* AMMViewController.m in Sources */,
 				432D240F19390EDC0069AB94 /* AFSecurityPolicy.m in Sources */,
+				434E205C193F8F8D00A95BF7 /* ViewFacebook.m in Sources */,
 				43F07FE6193D3B0700C5E49E /* ViewThank.m in Sources */,
 				432D23CB193907510069AB94 /* AMMAppDelegate.m in Sources */,
 				432D242819392AC00069AB94 /* ViewOutput.m in Sources */,

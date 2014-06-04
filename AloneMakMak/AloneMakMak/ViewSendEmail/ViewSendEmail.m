@@ -72,6 +72,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)showError {
+    UIAlertView *v = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please try again" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [v show];
+    [mViewIndicator setHidden:YES];
+}
+
 - (IBAction)clickSend:(id)sender {
     NSLog(@"Send");
     if(![mViewIndicator isHidden])
@@ -83,15 +89,20 @@
     [a api_upload:a.mImageCurrent
             email:mTextField.text
           success:^(id JSON){
-//              NSDictionary *json = (NSDictionary*)JSON;
-//              NSLog(@"%@", json);
-// Server damn pass all
-              [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
-              [mViewIndicator setHidden:YES];
+              NSDictionary *json = (NSDictionary*)JSON;
+              NSLog(@"%@", json);
+              if(json){
+                  NSNumber *success = [json objectForKey:@"success"];
+                  if(success && [success integerValue] > 0){
+                      [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
+                      [mViewIndicator setHidden:YES];
+                      return;
+                  }
+              }
+              [self showError];
           }failure:^(NSError *failure){
-//              NSLog(@"errorxxx %@", failure);
-              [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
-              [mViewIndicator setHidden:YES];
+              NSLog(@"errorxxx %@", failure);
+              [self showError];
           }];
 }
 

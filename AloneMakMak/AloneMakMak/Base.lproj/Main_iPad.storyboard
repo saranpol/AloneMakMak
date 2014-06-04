@@ -244,6 +244,20 @@
                                 <rect key="frame" x="204" y="27" width="536" height="181"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rnv-H9-rOp">
+                                <rect key="frame" x="753" y="324" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcS-qo-n8Y">
+                                <rect key="frame" x="929" y="709" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qXM-V0-Pnb" kind="modal" identifier="GotoViewFacebook" id="Pa3-Wf-SKQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -251,6 +265,7 @@
                     <connections>
                         <outlet property="mImageHead" destination="19x-kz-I4v" id="KEh-dm-og9"/>
                         <outlet property="mImageView" destination="RLc-yn-Ibs" id="zuQ-MK-fY7"/>
+                        <outlet property="mViewIndicator" destination="rnv-H9-rOp" id="l44-IF-Ka2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6E-ng-mMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,6 +354,60 @@
             </objects>
             <point key="canvasLocation" x="2546" y="976"/>
         </scene>
+        <!--View Facebook-->
+        <scene sceneID="dyB-46-Kxd">
+            <objects>
+                <viewController id="qXM-V0-Pnb" customClass="ViewFacebook" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nkx-1w-X3i"/>
+                        <viewControllerLayoutGuide type="bottom" id="yaO-Gj-iXa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hln-Hw-rsz">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SmT-YQ-ihS">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qXM-V0-Pnb" id="0b3-xi-mm6"/>
+                                </connections>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-ER-xRY">
+                                <rect key="frame" x="7" y="7" width="108" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="share-btnBack.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBack:" destination="byI-ZL-XZ3" eventType="touchUpInside" id="9Ce-bj-P7Q"/>
+                                    <action selector="clickBack:" destination="O99-vc-hD1" eventType="touchUpInside" id="Ud6-sW-KPJ"/>
+                                    <action selector="clickBack:" destination="qXM-V0-Pnb" eventType="touchUpInside" id="alf-AA-ono"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx5-2p-ukr">
+                                <rect key="frame" x="923" y="113" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iYf-xI-Gqp" kind="modal" identifier="GotoViewThank2" id="Qhu-M6-vY9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="mWebView" destination="SmT-YQ-ihS" id="dNV-03-hyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hU-uN-Vng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2601" y="1880"/>
+        </scene>
         <!--View Thank-->
         <scene sceneID="Obb-qQ-pcI">
             <objects>
@@ -410,4 +479,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qhu-M6-vY9"/>
+    </inferredMetricsTieBreakers>
 </document>

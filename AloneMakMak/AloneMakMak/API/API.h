@@ -30,6 +30,7 @@ typedef void (^APIFail)(NSError*);
 @property (nonatomic, strong) NSString *mDeviceToken;
 @property (nonatomic, strong) UIImage *mImageCurrent;
 @property (nonatomic, strong) UIView *mViewFrame;
+@property (nonatomic, strong) NSString *mImageID;
 
 // Localize
 - (NSString*)getLanguage;

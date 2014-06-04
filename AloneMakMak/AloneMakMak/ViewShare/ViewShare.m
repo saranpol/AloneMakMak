@@ -13,6 +13,7 @@
 
 @synthesize mImageView;
 @synthesize mImageHead;
+@synthesize mViewIndicator;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +46,8 @@
     // Do any additional setup after loading the view.
     API *a = [API getAPI];
     [mImageView setImage:a.mImageCurrent];
+    
+    [mViewIndicator setHidden:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -99,30 +102,63 @@
 //
 //}
 
+- (void)showError {
+    UIAlertView *v = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please try again" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [v show];
+    [mViewIndicator setHidden:YES];
+}
+
+
 - (IBAction)clickShare:(id)sender {
-    //    UIImage *image = [self saveImage];
-    //    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/tmp_img.jpg"];
-    //    [UIImageJPEGRepresentation(image, 1.0) writeToFile:path atomically:YES];
-    //
-    //    self.mDoc = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:path]];
-    //    mDoc.delegate = self;
-    //    [mDoc presentOptionsMenuFromRect:CGRectZero inView:self.view animated:YES];
+    if(![mViewIndicator isHidden])
+        return;
+
+    [mViewIndicator setHidden:NO];
     API *a = [API getAPI];
-    UIImage *image = a.mImageCurrent;
+    [a api_upload:a.mImageCurrent
+            email:nil
+          success:^(id JSON){
+              NSDictionary *json = (NSDictionary*)JSON;
+              NSLog(@"%@", json);
+              if(json){
+                  NSNumber *success = [json objectForKey:@"success"];
+                  if(success && [success integerValue] > 0){
+                      a.mImageID = [[json objectForKey:@"id"] stringValue];
+                      [self performSegueWithIdentifier:@"GotoViewFacebook" sender:nil];
+                      [mViewIndicator setHidden:YES];
+                      return;
+                  }
+              }
+              [self showError];
+          }failure:^(NSError *failure){
+              NSLog(@"errorxxx %@", failure);
+              [self showError];
+          }];
     
-    NSArray* dataToShare = @[image];  // ...or whatever pieces of data you want to share.
     
-    UIActivityViewController* activityViewController =
-    [[UIActivityViewController alloc] initWithActivityItems:dataToShare
-                                      applicationActivities:nil];
-    [self presentViewController:activityViewController animated:YES completion:^{
-        
-    }];
-    
-    //    NSArray *activityItems = @[image];
-    //    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-    //    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypePostToTwitter, UIActivityTypePostToWeibo];
-    //    [self presentViewController:activityVC animated:TRUE completion:nil];
+//    //    UIImage *image = [self saveImage];
+//    //    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/tmp_img.jpg"];
+//    //    [UIImageJPEGRepresentation(image, 1.0) writeToFile:path atomically:YES];
+//    //
+//    //    self.mDoc = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:path]];
+//    //    mDoc.delegate = self;
+//    //    [mDoc presentOptionsMenuFromRect:CGRectZero inView:self.view animated:YES];
+//    API *a = [API getAPI];
+//    UIImage *image = a.mImageCurrent;
+//    
+//    NSArray* dataToShare = @[image];  // ...or whatever pieces of data you want to share.
+//    
+//    UIActivityViewController* activityViewController =
+//    [[UIActivityViewController alloc] initWithActivityItems:dataToShare
+//                                      applicationActivities:nil];
+//    [self presentViewController:activityViewController animated:YES completion:^{
+//        
+//    }];
+//    
+//    //    NSArray *activityItems = @[image];
+//    //    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+//    //    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypePostToTwitter, UIActivityTypePostToWeibo];
+//    //    [self presentViewController:activityVC animated:TRUE completion:nil];
     
 }
 

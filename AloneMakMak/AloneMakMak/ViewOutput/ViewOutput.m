@@ -70,6 +70,17 @@
 }
 */
 
+- (UIImage*)resize:(UIImage*)image {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(1200, 900), NO, 1.0);
+    [image drawInRect:CGRectMake(0, 0, 1200, 900)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 - (UIImage*)saveImage {
     UIImage* image;
     //UIGraphicsBeginImageContext(mViewContent.frame.size);
@@ -78,6 +89,8 @@
     image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    
+    image = [self resize:image];
     
     return image;
 }

@@ -178,7 +178,8 @@ NSString *M_TABLE = @"M_TABLE_1";
            success:(APISuccess)success
            failure:(APIFail)failure {
     NSMutableDictionary *params = [self initialParam];
-    [params setObject:email forKey:@"email"];
+    if(email)
+        [params setObject:email forKey:@"email"];
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
 
     NSString *postPath = [API_PREFIX stringByAppendingString:@"upload"];
