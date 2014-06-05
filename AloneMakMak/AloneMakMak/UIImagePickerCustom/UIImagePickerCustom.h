@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSOperationQueue *mQueue;
 @property (nonatomic, assign) BOOL mIsInPreviewMode;
 @property (nonatomic, strong) UIPanGestureRecognizer *mGesture;
+@property (nonatomic, strong) UIImageView *mImageFrame;
+@property (nonatomic, assign) NSInteger mImageID;
 @end

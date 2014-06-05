@@ -16,6 +16,8 @@
 @synthesize mQueue;
 @synthesize mIsInPreviewMode;
 @synthesize mGesture;
+@synthesize mImageFrame;
+@synthesize mImageID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +59,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)clickChangeFrame {
+    if(mImageID == 0){
+        [mImageFrame setImage:[UIImage imageNamed:@"frame-2.png"]];
+        self.mImageID = 1;
+    }else{
+        [mImageFrame setImage:[UIImage imageNamed:@"frame.png"]];
+        self.mImageID = 0;
+    }
+}
+
 
 - (void)panFrame:(UIPanGestureRecognizer*)g {
     CGPoint p = [g locationInView:self.view];
@@ -85,9 +97,9 @@
     API *a = [API getAPI];
     a.mViewFrame = [[UIView alloc] initWithFrame:CGRectMake(600, 0, 768, 1024)];
     
-    UIImageView *f = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame.png"]];
-    [f setFrame:CGRectMake(-2728/2, 0, 2728, 768)];
-    [a.mViewFrame addSubview:f];
+    self.mImageFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame.png"]];
+    [mImageFrame setFrame:CGRectMake(-2728/2, 0, 2728, 768)];
+    [a.mViewFrame addSubview:mImageFrame];
     [self.view addSubview:a.mViewFrame];
     [a.mViewFrame setUserInteractionEnabled:NO];
     
@@ -114,6 +126,12 @@
     [buttonBack setImage:[UIImage imageNamed:@"share-btnBack.png"] forState:UIControlStateNormal];
     [self.view addSubview:buttonBack];
 
+    UIButton *buttonChangeFrame = [[UIButton alloc] initWithFrame:CGRectMake(800, 660, 105, 112)];
+    [buttonChangeFrame setAlpha:0.8];
+    [buttonChangeFrame addTarget:self action:@selector(clickChangeFrame) forControlEvents:UIControlEventTouchUpInside];
+    [buttonChangeFrame setImage:[UIImage imageNamed:@"intro-btnChangeFrame.png"] forState:UIControlStateNormal];
+    [self.view addSubview:buttonChangeFrame];
+    
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self
