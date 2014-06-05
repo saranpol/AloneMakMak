@@ -86,6 +86,9 @@
     } else {
         [self performSegueWithIdentifier:@"GotoViewThank2" sender:nil];
     }
+    
+    if([c isEqualToString:@"https://www.facebook.com/"])
+        [self performSegueWithIdentifier:@"GotoViewThank2" sender:nil];
 }
 
 

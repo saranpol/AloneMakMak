@@ -24,15 +24,15 @@
                                     <outlet property="delegate" destination="YcZ-8J-xnl" id="mQ4-LF-Ubd"/>
                                 </connections>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tas-fF-c0a">
-                                <rect key="frame" x="0.0" y="0.0" width="82" height="35"/>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFx-jF-z5O">
+                                <rect key="frame" x="8" y="648" width="108" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" image="share-btnBack.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickBack:" destination="YcZ-8J-xnl" eventType="touchUpInside" id="gpU-qX-Ov6"/>
+                                    <action selector="clickBack:" destination="7rW-kJ-eui" eventType="touchUpInside" id="Bhd-i0-Ntz"/>
+                                    <action selector="clickBack:" destination="YcZ-8J-xnl" eventType="touchUpInside" id="dpk-xd-lX2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -155,13 +155,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-aW-KiK">
-                                <rect key="frame" x="25" y="643" width="108" height="115"/>
+                                <rect key="frame" x="20" y="643" width="108" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="share-btnBack.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickBack:" destination="YcZ-8J-xnl" eventType="touchUpInside" id="sD0-Iw-T5a"/>
                                     <action selector="clickBack:" destination="7rW-kJ-eui" eventType="touchUpInside" id="vB3-EX-i94"/>
                                 </connections>
                             </button>
@@ -172,7 +171,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickBack:" destination="YcZ-8J-xnl" eventType="touchUpInside" id="D4h-gJ-QhY"/>
                                     <action selector="clickSave:" destination="7rW-kJ-eui" eventType="touchUpInside" id="rs8-op-9wS"/>
                                 </connections>
                             </button>
@@ -374,8 +372,8 @@
                                     <outlet property="delegate" destination="qXM-V0-Pnb" id="0b3-xi-mm6"/>
                                 </connections>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-ER-xRY">
-                                <rect key="frame" x="7" y="7" width="108" height="115"/>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJg-ER-xRY">
+                                <rect key="frame" x="10" y="643" width="108" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="share-btnBack.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
