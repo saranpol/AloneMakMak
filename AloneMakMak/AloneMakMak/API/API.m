@@ -15,7 +15,7 @@ static NSBundle *bundle = nil;
 
 // SAVE KEY
 NSString *M_TABLE = @"M_TABLE_1";
-
+NSString *M_SAVE_PHOTO_EMAIL = @"M_SAVE_PHOTO_EMAIL_1";
 
 + (API*)getAPI {
     if (instance == nil) {

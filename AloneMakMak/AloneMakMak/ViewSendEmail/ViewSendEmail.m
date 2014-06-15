@@ -78,32 +78,63 @@
     [mViewIndicator setHidden:YES];
 }
 
+- (NSString *)documentsPathForFileName:(NSString *)name {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    return [documentsPath stringByAppendingPathComponent:name];
+}
+
+- (NSString*)saveImage {
+    API *a = [API getAPI];
+    NSData *imageData = UIImageJPEGRepresentation(a.mImageCurrent, 1);
+    NSString *fileName = [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
+    NSString *imagePath = [self documentsPathForFileName:fileName];
+    [imageData writeToFile:imagePath atomically:YES];
+    return imagePath;
+}
+
 - (IBAction)clickSend:(id)sender {
-    NSLog(@"Send");
-    if(![mViewIndicator isHidden])
-        return;
-    [mViewIndicator setHidden:NO];
+    API *a = [API getAPI];
+    NSMutableArray *saveArray = [a getObject:M_SAVE_PHOTO_EMAIL];
+    if(!saveArray){
+        saveArray = [NSMutableArray new];
+    }
+    
+    NSMutableDictionary *d = [NSMutableDictionary new];
+    [d setObject:[self saveImage] forKey:@"ImagePath"];
     if(!mTextField.text)
         mTextField.text = @"";
-    API *a = [API getAPI];
-    [a api_upload:a.mImageCurrent
-            email:mTextField.text
-          success:^(id JSON){
-              NSDictionary *json = (NSDictionary*)JSON;
-              NSLog(@"%@", json);
-              if(json){
-                  NSNumber *success = [json objectForKey:@"success"];
-                  if(success && [success integerValue] > 0){
-                      [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
-                      [mViewIndicator setHidden:YES];
-                      return;
-                  }
-              }
-              [self showError];
-          }failure:^(NSError *failure){
-              NSLog(@"errorxxx %@", failure);
-              [self showError];
-          }];
+    [d setObject:mTextField.text forKey:@"Email"];
+    [saveArray addObject:d];
+    [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
+    [a saveObject:saveArray forKey:M_SAVE_PHOTO_EMAIL];
+    
+//    NSLog(@"Send");
+//    if(![mViewIndicator isHidden])
+//        return;
+//    [mViewIndicator setHidden:NO];
+//    if(!mTextField.text)
+//        mTextField.text = @"";
+//    API *a = [API getAPI];
+//    [a api_upload:a.mImageCurrent
+//            email:mTextField.text
+//          success:^(id JSON){
+//              NSDictionary *json = (NSDictionary*)JSON;
+//              NSLog(@"%@", json);
+//              if(json){
+//                  NSNumber *success = [json objectForKey:@"success"];
+//                  if(success && [success integerValue] > 0){
+//                      [self performSegueWithIdentifier:@"GotoViewThank" sender:nil];
+//                      [mViewIndicator setHidden:YES];
+//                      return;
+//                  }
+//              }
+//              [self showError];
+//          }failure:^(NSError *failure){
+//              NSLog(@"errorxxx %@", failure);
+//              [self showError];
+//          }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

@@ -7,12 +7,16 @@
 
 
 
+
+
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
 #define IS_IPAD_RETINA (IS_IPAD && IS_RETINA)
 #define IS_IPHONE_SHORT ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) && [[UIScreen mainScreen] bounds].size.height < 568.0f)
 
 extern NSString *M_TABLE;
+extern NSString *M_SAVE_PHOTO_EMAIL;
+
 
 typedef void (^APICallback)();
 typedef void (^APISuccess)(id);

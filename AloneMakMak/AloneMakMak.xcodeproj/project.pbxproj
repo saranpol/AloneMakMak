@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432CA2A1194D0DF900EAEAC5 /* ViewWaitingPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 432CA2A0194D0DF900EAEAC5 /* ViewWaitingPhoto.m */; };
+		432CA2A5194D1B7400EAEAC5 /* CellWaitingPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 432CA2A4194D1B7400EAEAC5 /* CellWaitingPhoto.m */; };
 		432D23BB193907510069AB94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BA193907510069AB94 /* Foundation.framework */; };
 		432D23BD193907510069AB94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BC193907510069AB94 /* CoreGraphics.framework */; };
 		432D23BF193907510069AB94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432D23BE193907510069AB94 /* UIKit.framework */; };
@@ -96,6 +98,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		432CA29F194D0DF900EAEAC5 /* ViewWaitingPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewWaitingPhoto.h; sourceTree = "<group>"; };
+		432CA2A0194D0DF900EAEAC5 /* ViewWaitingPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewWaitingPhoto.m; sourceTree = "<group>"; };
+		432CA2A3194D1B7400EAEAC5 /* CellWaitingPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWaitingPhoto.h; sourceTree = "<group>"; };
+		432CA2A4194D1B7400EAEAC5 /* CellWaitingPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWaitingPhoto.m; sourceTree = "<group>"; };
 		432D23B7193907510069AB94 /* AloneMakMak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AloneMakMak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		432D23BA193907510069AB94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		432D23BC193907510069AB94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -223,6 +229,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432CA29E194D0DED00EAEAC5 /* ViewWaitingPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				432CA2A2194D1B5E00EAEAC5 /* CellWaitingPhoto */,
+				432CA29F194D0DF900EAEAC5 /* ViewWaitingPhoto.h */,
+				432CA2A0194D0DF900EAEAC5 /* ViewWaitingPhoto.m */,
+			);
+			path = ViewWaitingPhoto;
+			sourceTree = "<group>";
+		};
+		432CA2A2194D1B5E00EAEAC5 /* CellWaitingPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				432CA2A3194D1B7400EAEAC5 /* CellWaitingPhoto.h */,
+				432CA2A4194D1B7400EAEAC5 /* CellWaitingPhoto.m */,
+			);
+			path = CellWaitingPhoto;
+			sourceTree = "<group>";
+		};
 		432D23AE193907510069AB94 = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +292,7 @@
 				432D23CA193907510069AB94 /* AMMAppDelegate.m */,
 				432D23D2193907510069AB94 /* AMMViewController.h */,
 				432D23D3193907510069AB94 /* AMMViewController.m */,
+				432CA29E194D0DED00EAEAC5 /* ViewWaitingPhoto */,
 				434E2059193F8F8000A95BF7 /* ViewFacebook */,
 				43F07FE3193D3AFA00C5E49E /* ViewThank */,
 				43F07FDF193D386B00C5E49E /* ViewSendEmail */,
@@ -639,10 +665,12 @@
 				432D240E19390EDC0069AB94 /* AFNetworkReachabilityManager.m in Sources */,
 				432D2417193910970069AB94 /* ViewListImage.m in Sources */,
 				432D241B193914C80069AB94 /* UIImagePickerCustom.m in Sources */,
+				432CA2A5194D1B7400EAEAC5 /* CellWaitingPhoto.m in Sources */,
 				432D241219390EDC0069AB94 /* AFURLResponseSerialization.m in Sources */,
 				432D241319390EDC0069AB94 /* AFURLSessionManager.m in Sources */,
 				432D2424193921F10069AB94 /* ViewUtil.m in Sources */,
 				432D23C7193907510069AB94 /* main.m in Sources */,
+				432CA2A1194D0DF900EAEAC5 /* ViewWaitingPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
